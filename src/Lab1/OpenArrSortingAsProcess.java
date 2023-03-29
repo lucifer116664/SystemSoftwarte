@@ -23,17 +23,15 @@ public class OpenArrSortingAsProcess{
 
             String input = cin.next();
             writer.write(input);
+            writer.newLine();
             writer.flush();
-            writer.close();
 
             System.out.println(scan.nextLine());
 
             for (int i = 0; i < Integer.parseInt(input); i++) {
-                writer = new BufferedWriter(new OutputStreamWriter(stdin));
-                input = cin.next();
-                writer.write(input);
+                writer.write(cin.next());
+                writer.newLine();
                 writer.flush();
-                writer.close();
             }
 
             while (scan.hasNextLine())
