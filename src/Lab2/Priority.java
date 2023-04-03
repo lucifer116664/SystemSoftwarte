@@ -15,11 +15,14 @@ public class Priority {
         getEvenNumbers.setPriority(Thread.MAX_PRIORITY);
         addEvenNumbers.setPriority(Thread.MIN_PRIORITY);
 
+        long time = System.currentTimeMillis();
         getEvenNumbers.start();
-
         getEvenNumbers.join();
+        System.out.println("Getting number thread was working " + (System.currentTimeMillis() - time) + " milliseconds");
 
+        time = System.currentTimeMillis();
         addEvenNumbers.start();
+        System.out.println("Adding number thread was working " + (System.currentTimeMillis() - time) + " milliseconds");
     }
 
     static class GetEvenNumbers extends Thread{
