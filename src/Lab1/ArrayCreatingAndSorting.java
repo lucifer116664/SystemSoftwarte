@@ -6,18 +6,6 @@ import java.util.Scanner;
 public class ArrayCreatingAndSorting {
     private int[] array;
 
-    private void createArray() throws NumberFormatException{
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter number of elements:");
-        array = new int[Integer.parseInt(scan.next())];
-
-        System.out.println("Enter elements:");
-        for(int i = 0; i < array.length; i ++) {
-            array[i] = Integer.parseInt(scan.next());
-        }
-    }
-
     private void showElements(String msg) {
         System.out.println(msg);
         for (int element : array)
@@ -32,8 +20,16 @@ public class ArrayCreatingAndSorting {
     }
 
     public void go() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter number of elements:");
         try {
-            createArray();
+
+            array = new int[Integer.parseInt(scan.next())];
+
+            System.out.println("Enter elements:");
+            for(int i = 0; i < array.length; i ++) {
+                array[i] = Integer.parseInt(scan.next());
+            }
 
             ArraySorting arrSorting = new ArraySorting();
             arrSorting.start();
